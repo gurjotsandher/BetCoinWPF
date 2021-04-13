@@ -233,6 +233,7 @@ namespace BetCoinWpf
             gameTimer.Start();
             balance_Value.Content = Player.Balance.ToString("n2");
 
+
         }
         /*
          * Adds sprite as a bitmap with 4 different frames.
@@ -306,6 +307,7 @@ namespace BetCoinWpf
          */
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+  
             dt.Stop();
             gameTimer.Stop();
             dt.IsEnabled = false;
