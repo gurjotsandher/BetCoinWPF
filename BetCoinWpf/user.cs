@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿///<authors>
+/// Arya Koukia, Gurjot Mander, Gurjot Sandher
+/// </authors>
+
 
 namespace BetCoinWpf
 {

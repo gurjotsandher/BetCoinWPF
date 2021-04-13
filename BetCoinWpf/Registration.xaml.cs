@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿///<authors>
+/// Arya Koukia, Gurjot Mander, Gurjot Sandher
+/// </authors>
+
+
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Data;
-using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 
 
 using FireSharp.Config;
@@ -91,23 +83,15 @@ namespace BetCoinWpf
             textBoxUsername.Text = "";
             passwordBox1.Password = "";
         }
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+
         /*
          * Submit button that checks if all fields are filled, then consults FireBase DB for result.
          */
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxUsername.Text) || string.IsNullOrEmpty(passwordBox1.Password.ToString()) || string.IsNullOrEmpty(textBoxID.Text))
+            if (string.IsNullOrEmpty(textBoxUsername.Text) || string.IsNullOrEmpty(passwordBox1.Password.ToString()) || string.IsNullOrEmpty(textBoxID.Text) || string.IsNullOrEmpty(textBoxBalance.Text) 
+                || string.IsNullOrEmpty(textBoxBank_name.Text) || string.IsNullOrEmpty(textBoxBank_IBAN.Text))
             {
-                //if (Double.Parse(textBoxBalance.Text.ToString()) > 0)
-                //{
-                //    Console.WriteLine(Double.Parse(textBoxBalance.Text.ToString()));
-
-                //}
-
                 MessageBox.Show("Please fill out all of the fields.");
             }
             else
@@ -119,15 +103,15 @@ namespace BetCoinWpf
 
                 User res = response.ResultAs<User>();
                 MessageBox.Show("Your account has been registered.");
-               
+
                 textBoxUsername.Text = string.Empty;
                 passwordBox1.Password = string.Empty;
                 Login login = new Login();
                 login.Show();
                 Close();
             }
-           
-            
+
+
         }
     }
 }

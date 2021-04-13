@@ -1,17 +1,16 @@
-﻿using FireSharp.Response;
+﻿///<authors>
+/// Arya Koukia, Gurjot Mander, Gurjot Sandher
+/// </authors>
+
+
+using FireSharp.Response;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using FireSharp.Config;
 using FireSharp.Interfaces;
@@ -51,39 +50,6 @@ namespace BetCoinWpf
 
         double multiplier;
 
-        public string multiplierTextProperty
-        {
-            get
-            {
-                return multiplierText.Content.ToString();
-            }
-            set
-            {
-                multiplierText.Content = value;
-            }
-        }
-
-        public string multiplpierValueProperty
-        {
-            set
-            {
-                multiplierValue.Content = value;
-            }
-        }
-
-        public string betTextBoxProperty
-        {
-            get
-            {
-                return BetTextBoxValue.Text;
-            }
-
-            set
-            {
-                BetTextBoxValue.Text = value;
-            }
-        }
-
 
         /// <summary>
         /// Game constructor, creates an instance of a game
@@ -102,7 +68,7 @@ namespace BetCoinWpf
             {
                 //string userId = get.Value.Id.ToString().Substring(1, get.Value.Id.ToString().Length - 2) ;
                 //string userId = get.Value.Id.ToString() ;
-                string db_name = get.Value.Username.ToString() ;
+                string db_name = get.Value.Username.ToString();
                 string logged_in_name = user.Username;
 
 
@@ -114,7 +80,7 @@ namespace BetCoinWpf
                     //balance_Value.Content = get.Value.Balance.ToString();
                     //Player = new User(get.Value.Username.ToString(), get.Value.Password.ToString(), get.Value.Bank.ToString(), get.Value.Iban.ToString(), get.Value.Id.ToString(), get.Value.Balance);
                 }
-                
+
             }
 
 
@@ -133,7 +99,7 @@ namespace BetCoinWpf
             MyCanvas.Background = backgroundSprite;
 
             StartGame();
-            
+
         }
         /*
          * Takes a users bet from text box and begins a game.
@@ -151,7 +117,7 @@ namespace BetCoinWpf
             int bet = int.Parse(BetTextBoxValue.Text);
             double multiplier = logic.generateOneMultiplier(bet);
             multiplierValue.Content = multiplier.ToString("n2");
-           
+
         }
         /*
          * Engine for the canvas WPF form.
@@ -259,7 +225,7 @@ namespace BetCoinWpf
             player.Fill = playerSprite;
         }
 
-       
+
 
         private double increment = 1.0;
         private double inputValue = 1.0;
@@ -271,9 +237,9 @@ namespace BetCoinWpf
         private void dtTicker(object sender, EventArgs e)
         {
             increment += 0.001;
-            
+
             inputValue = Math.Round(increment, 2);
-            
+
             if (Double.Parse(multiplierText.Content.ToString()) == Double.Parse(multiplierValue.Content.ToString()))
             {
                 dt.IsEnabled = false;
@@ -307,13 +273,13 @@ namespace BetCoinWpf
          */
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-  
+
             dt.Stop();
             gameTimer.Stop();
             dt.IsEnabled = false;
             gameTimer.IsEnabled = false;
             double winnings = (Double.Parse(multiplierText.Content.ToString()) * Double.Parse(BetTextBoxValue.Text.ToString()));
-            if(Double.Parse(multiplierText.Content.ToString()) <= Double.Parse(multiplierValue.Content.ToString())) //winning
+            if (Double.Parse(multiplierText.Content.ToString()) <= Double.Parse(multiplierValue.Content.ToString())) //winning
             {
                 Player.Balance = Player.Balance + winnings - Double.Parse(BetTextBoxValue.Text.ToString());
                 FirebaseResponse response = client.Set("Users/" + Player.Username, (User)Player);
@@ -333,7 +299,9 @@ namespace BetCoinWpf
             nextGame.Show();
             this.Close();
         }
-
+        /*
+         * Logs out the user and closes the app upon button click.
+         */
         private void Logout_Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Successfully logged out.");

@@ -1,8 +1,10 @@
-﻿using System;
+﻿///<authors>
+/// Arya Koukia, Gurjot Mander, Gurjot Sandher
+/// </authors>
+
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BetCoinWpf
 {
@@ -11,9 +13,9 @@ namespace BetCoinWpf
         */
     class GameLogic
     {
-       /*
-        * Generates a single multiplier using custom algorithm.
-        */
+        /*
+         * Generates a single multiplier using custom algorithm.
+         */
         public double generateOneMultiplier(int bet)
         {
             var rand = new Random();

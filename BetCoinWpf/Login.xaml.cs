@@ -1,19 +1,11 @@
-﻿using System;
+﻿///<authors>
+/// Arya Koukia, Gurjot Mander, Gurjot Sandher
+/// </authors>
+
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data;
-using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 
 
 using FireSharp.Config;
@@ -86,16 +78,16 @@ namespace BetCoinWpf
 
                         if (passwordBox1.Password.ToString() == passresult)
                         {
-                            User player = new User(get.Value.Id, get.Value.Username, get.Value.Password, get.Value.Bank, get.Value.Iban,  get.Value.Balance);
+                            User player = new User(get.Value.Id, get.Value.Username, get.Value.Password, get.Value.Bank, get.Value.Iban, get.Value.Balance);
 
                             MessageBox.Show("Welcome " + textBoxEmail.Text + ". Your balance is: $" + player.Balance + "\n " +
                                 "48% of the time, the multiplier will be above 2x. Good luck!");
 
                             Game game = new Game(player);
                             game.Show();
-                            
+
                             this.Hide();
-                            
+
 
                         }
 
