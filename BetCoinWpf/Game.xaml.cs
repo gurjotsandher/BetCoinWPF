@@ -316,7 +316,7 @@ namespace BetCoinWpf
             if(Double.Parse(multiplierText.Content.ToString()) <= Double.Parse(multiplierValue.Content.ToString())) //winning
             {
                 Player.Balance = Player.Balance + winnings - Double.Parse(BetTextBoxValue.Text.ToString());
-                FirebaseResponse response = client.Set("Users/" + Player.Id, (User)Player);
+                FirebaseResponse response = client.Set("Users/" + Player.Username, (User)Player);
 
             }
             else

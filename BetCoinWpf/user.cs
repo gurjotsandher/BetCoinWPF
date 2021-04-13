@@ -63,7 +63,7 @@ namespace BetCoinWpf
         //    this.Wallet = 0;
         //}
 
-        public User(string username, string password, string bank, string id, string iban, double balance)
+        public User(string id, string username, string password, string bank, string iban, double balance)
         {
             this.Username = username;
             this.Password = password;
