@@ -114,7 +114,6 @@ namespace BetCoinWpf
             {
 
                 User user = new User(textBoxID.Text.ToString(), textBoxUsername.Text.ToString(), passwordBox1.Password.ToString(), textBoxBank_name.Text.ToString(), textBoxBank_IBAN.Text.ToString(), Double.Parse(textBoxBalance.Text.ToString()));
-                // Convert.ToDouble(textBoxBalance.ToString()
 
                 FirebaseResponse response = client.Set("Users/" + user.Username, (User)user);
 

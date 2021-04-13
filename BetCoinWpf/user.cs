@@ -60,7 +60,7 @@ namespace BetCoinWpf
         //    this.Iban = iban;
         //    this.Id = Guid.NewGuid().ToString();
         //    this.Balance = balance;
-        //    this.Wallet = 0;
+        ////    this.Wallet = 0;
         //}
 
         public User(string id, string username, string password, string bank, string iban, double balance)
