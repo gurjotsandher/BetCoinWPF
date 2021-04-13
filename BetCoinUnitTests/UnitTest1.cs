@@ -101,5 +101,12 @@ namespace BetCoinUnitTests
             Assert.IsTrue(login.textBoxEmailProperty.Equals("") &&
                 login.textBoxPasswordProperty.Equals(""));
         }
+
+        [TestMethod]
+        public void TestBalanceGreaterThan0()
+        {
+            User user = new User(50, "myBank", "Default", "3233", "123", "testMethod");
+            Assert.AreEqual(user.Balance, 50);
+        }
     }
 }
