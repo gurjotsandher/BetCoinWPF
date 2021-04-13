@@ -7,15 +7,18 @@
         mc:Ignorable="d"
         Title="Game" Height="652.5" Width="697.283">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="42*"/>
+        </Grid.ColumnDefinitions>
         <Label Content="Bet: " HorizontalAlignment="Left" Margin="66,62,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="BetTextBoxValue" HorizontalAlignment="Left" Height="23" Margin="111,65,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="BetTextBoxValue" HorizontalAlignment="Left" Height="23" Margin="111,65,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Label x:Name="multiplierLabel" Content="Multiplier: " HorizontalAlignment="Left" Margin="66,123,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="multiplierValue" Content="" HorizontalAlignment="Left" Margin="178,123,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="WinningsLabel" Content="Winnings: " HorizontalAlignment="Left" Margin="66,176,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="WinningsValue" Content="" HorizontalAlignment="Left" Margin="178,176,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="BetButton" Content="Bet" HorizontalAlignment="Left" Margin="113,223,0,0" VerticalAlignment="Top" Width="75" Click="BetButton_Click"/>
+        <Label x:Name="multiplierValue" Content="" HorizontalAlignment="Left" Margin="35.314,123,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="WinningsValue" Content="" HorizontalAlignment="Left" Margin="35.314,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="BetButton" Content="Bet" HorizontalAlignment="Left" Margin="113,223,0,0" VerticalAlignment="Top" Width="75" Click="BetButton_Click" Grid.ColumnSpan="2"/>
 
-        <Canvas Name="MyCanvas" Focusable="True" KeyDown="KeyIsDown" KeyUp="KeyIsUp" Background="LightBlue" HorizontalAlignment="Left" Height="354" Margin="0,267,0,0" VerticalAlignment="Top" Width="689">
+        <Canvas Name="MyCanvas" Focusable="True" KeyDown="KeyIsDown" KeyUp="KeyIsUp" Background="LightBlue" HorizontalAlignment="Left" Height="354" Margin="0,267,0,0" VerticalAlignment="Top" Width="689" Grid.ColumnSpan="2">
 
             <Rectangle Name="background" Height="354" Width="689" Fill="Orange"/>
             <Rectangle Name="secondBackground" Height="354" Width="689" Fill="LightGreen" Canvas.Left="592"/>
@@ -26,9 +29,9 @@
 
             <Label Name="multiplierText" FontSize="32" Content="1.0" Canvas.Left="309" Canvas.Top="57" FontWeight="Bold" Foreground="White"/>
         </Canvas>
-        <Button Content="Stop" HorizontalAlignment="Left" Margin="221,223,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label x:Name="balanceName" Content="Balance: " HorizontalAlignment="Left" Margin="324,62,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="balance_Value" Content=" " HorizontalAlignment="Left" Margin="421,62,0,0" VerticalAlignment="Top"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="78.314,223,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
+        <Label x:Name="balanceName" Content="Balance: " HorizontalAlignment="Left" Margin="181.314,62,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="balance_Value" Content=" " HorizontalAlignment="Left" Margin="278.314,62,0,0" VerticalAlignment="Top" Grid.Column="1"/>
 
     </Grid>
 </Window>
