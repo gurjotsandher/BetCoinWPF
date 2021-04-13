@@ -79,10 +79,10 @@ namespace BetCoinUnitTests
         }
 
         [TestMethod]
-        public void TestUserBeginsWith100()
+        public void TestUserBeginsWith0()
         {
             User user = new User();
-            Assert.AreEqual(user.Balance, 100);
+            Assert.AreEqual(user.Balance, 0);
         }
 
         [TestMethod]
