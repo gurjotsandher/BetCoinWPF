@@ -151,7 +151,7 @@ namespace BetCoinWpf
             int bet = int.Parse(BetTextBoxValue.Text);
             double multiplier = logic.generateOneMultiplier(bet);
             multiplierValue.Content = multiplier.ToString("n2");
-            WinningsValue.Content = (multiplier * bet).ToString("n2");
+           
         }
         /*
          * Engine for the canvas WPF form.
@@ -332,6 +332,14 @@ namespace BetCoinWpf
             Game nextGame = new Game(Player);
             nextGame.Show();
             this.Close();
+        }
+
+        private void Logout_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Successfully logged out.");
+            System.Environment.Exit(1);
+
+
         }
     }
 }

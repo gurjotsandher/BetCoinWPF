@@ -86,9 +86,10 @@ namespace BetCoinWpf
 
                         if (passwordBox1.Password.ToString() == passresult)
                         {
-                            User player = new User(get.Value.Username, get.Value.Password, get.Value.Bank, get.Value.Iban, get.Value.Id, get.Value.Balance);
+                            User player = new User(get.Value.Id, get.Value.Username, get.Value.Password, get.Value.Bank, get.Value.Iban,  get.Value.Balance);
 
-                            MessageBox.Show("Welcome " + textBoxEmail.Text + " you currently have " + player.Balance);
+                            MessageBox.Show("Welcome " + textBoxEmail.Text + ". Your balance is: $" + player.Balance + "\n " +
+                                "48% of the time, the multiplier will be above 2x. Good luck!");
 
                             Game game = new Game(player);
                             game.Show();

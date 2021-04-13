@@ -14,7 +14,6 @@
         <Label Content="Bet: " HorizontalAlignment="Left" Margin="66,62,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="BetTextBoxValue" HorizontalAlignment="Left" Height="23" Margin="111,65,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Label x:Name="multiplierValue" Content="" HorizontalAlignment="Left" Margin="35.314,123,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label x:Name="WinningsValue" Content="" HorizontalAlignment="Left" Margin="35.314,176,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Button x:Name="BetButton" Content="Bet" HorizontalAlignment="Left" Margin="63,123,0,0" VerticalAlignment="Top" Width="75" Click="BetButton_Click" RenderTransformOrigin="-0.06,0.45"/>
 
         <Canvas Name="MyCanvas" Focusable="True" KeyDown="KeyIsDown" KeyUp="KeyIsUp" Background="LightBlue" HorizontalAlignment="Left" Height="354" Margin="0,267,0,0" VerticalAlignment="Top" Width="689" Grid.ColumnSpan="2">
@@ -31,6 +30,7 @@
         <Button Content="Stop" HorizontalAlignment="Left" Margin="22,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
         <Label x:Name="balanceName" Content="Balance: " HorizontalAlignment="Left" Margin="193,94,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="balance_Value" Content=" " HorizontalAlignment="Left" Margin="278,94,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.462,1.538"/>
+        <Button x:Name="Logout_Button" Content="Logout" HorizontalAlignment="Left" Margin="461,0,0,591" VerticalAlignment="Bottom" Width="75" Click="Logout_Button_Click" RenderTransformOrigin="-0.06,0.45" Grid.Column="1"/>
 
     </Grid>
 </Window>

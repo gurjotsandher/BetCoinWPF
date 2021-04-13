@@ -32,7 +32,7 @@ namespace BetCoinWpf
         {
             get
             {
-                return textBoxEmail.Text;
+                return textBoxUsername.Text;
             }
         }
 
@@ -88,7 +88,7 @@ namespace BetCoinWpf
         public void Reset()
         {
             //textBoxID.Text = "";
-            textBoxEmail.Text = "";
+            textBoxUsername.Text = "";
             passwordBox1.Password = "";
         }
         private void button3_Click(object sender, RoutedEventArgs e)
@@ -100,7 +100,7 @@ namespace BetCoinWpf
          */
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(passwordBox1.Password.ToString()) || string.IsNullOrEmpty(textBoxID.Text))
+            if (string.IsNullOrEmpty(textBoxUsername.Text) || string.IsNullOrEmpty(passwordBox1.Password.ToString()) || string.IsNullOrEmpty(textBoxID.Text))
             {
                 //if (Double.Parse(textBoxBalance.Text.ToString()) > 0)
                 //{
@@ -113,7 +113,7 @@ namespace BetCoinWpf
             else
             {
 
-                User user = new User(textBoxID.Text.ToString(), textBoxEmail.Text.ToString(), passwordBox1.Password.ToString(), textBoxBank_name.Text.ToString(), textBoxBank_IBAN.Text.ToString(), Double.Parse(textBoxBalance.Text.ToString()));
+                User user = new User(textBoxID.Text.ToString(), textBoxUsername.Text.ToString(), passwordBox1.Password.ToString(), textBoxBank_name.Text.ToString(), textBoxBank_IBAN.Text.ToString(), Double.Parse(textBoxBalance.Text.ToString()));
                 // Convert.ToDouble(textBoxBalance.ToString()
 
                 FirebaseResponse response = client.Set("Users/" + user.Username, (User)user);
@@ -121,7 +121,7 @@ namespace BetCoinWpf
                 User res = response.ResultAs<User>();
                 MessageBox.Show("Your account has been registered.");
                
-                textBoxEmail.Text = string.Empty;
+                textBoxUsername.Text = string.Empty;
                 passwordBox1.Password = string.Empty;
                 Login login = new Login();
                 login.Show();
