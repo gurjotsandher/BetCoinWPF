@@ -27,18 +27,6 @@ namespace BetCoinWpf
             this.Wallet = 0;
         }
 
-        //public User(double balance, string bank, string iban, string password, string username)
-        //{
-        //    this.Username = username;
-        //    this.Password = password;
-        //    this.Bank = bank;
-        //    this.Iban = iban;
-        //    this.Id = Guid.NewGuid().ToString();
-        //    this.Balance = balance;
-        //    this.Wallet = 0;
-
-        //}
-
         public User(double balance, string bank, string iban, string id, string password, string username)
         {
             this.Username = username;
@@ -50,17 +38,6 @@ namespace BetCoinWpf
             this.Wallet = 0;
 
         }
-
-        //public User(string username, string password, string bank, string iban, double balance)
-        //{
-        //    this.Username = username;
-        //    this.Password = password;
-        //    this.Bank = bank;
-        //    this.Iban = iban;
-        //    this.Id = Guid.NewGuid().ToString();
-        //    this.Balance = balance;
-        ////    this.Wallet = 0;
-        //}
 
         public User(string id, string username, string password, string bank, string iban, double balance)
         {
