@@ -107,6 +107,7 @@ namespace BetCoinWpf
          */
         private void BetButton_Click(object sender, RoutedEventArgs e)
         {
+            Stop_Button.Visibility = Visibility.Visible;
             GameLogic logic = new GameLogic();
             dt.Interval = TimeSpan.FromMilliseconds(1);
             //BetButton_Click();
@@ -198,7 +199,7 @@ namespace BetCoinWpf
 
             gameTimer.Start();
             balance_Value.Content = Player.Balance.ToString("n2");
-
+            Stop_Button.Visibility = Visibility.Hidden;
 
         }
         /*
@@ -273,7 +274,7 @@ namespace BetCoinWpf
          */
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
             dt.Stop();
             gameTimer.Stop();
             dt.IsEnabled = false;

@@ -27,7 +27,7 @@
 
             <Label Name="multiplierText" FontSize="32" Content="1.0" Canvas.Left="309" Canvas.Top="57" FontWeight="Bold" Foreground="White"/>
         </Canvas>
-        <Button Content="Stop" HorizontalAlignment="Left" Margin="22,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="Stop_Button" Content="Stop" HorizontalAlignment="Left" Margin="22,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
         <Label x:Name="balanceName" Content="Balance: " HorizontalAlignment="Left" Margin="193,94,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="balance_Value" Content=" " HorizontalAlignment="Left" Margin="278,94,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.462,1.538"/>
         <Button x:Name="Logout_Button" Content="Logout" HorizontalAlignment="Left" Margin="461,0,0,591" VerticalAlignment="Bottom" Width="75" Click="Logout_Button_Click" RenderTransformOrigin="-0.06,0.45" Grid.Column="1"/>

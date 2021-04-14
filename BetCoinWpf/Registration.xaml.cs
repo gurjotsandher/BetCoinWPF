@@ -82,6 +82,10 @@ namespace BetCoinWpf
             //textBoxID.Text = "";
             textBoxUsername.Text = "";
             passwordBox1.Password = "";
+            textBoxBalance.Text = "";
+            textBoxBank_IBAN.Text = "";
+            textBoxBank_name.Text = "";
+            textBoxID.Text = "";
         }
 
         /*
